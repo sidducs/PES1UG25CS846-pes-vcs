@@ -2,7 +2,7 @@
 //Phase 4: Add tree integration
 //Phase 4: Add metadata and timestamp
 //Phase 4: Store commit object
-
+//Phase 4: Final commit implementation
 
 #include "commit.h"
 #include "index.h"
