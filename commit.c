@@ -1,3 +1,7 @@
+//Phase 4: Implement commit structure
+//Phase 4: Add tree integration
+
+
 #include "commit.h"
 #include "index.h"
 #include "tree.h"
