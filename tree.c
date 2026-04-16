@@ -1,6 +1,8 @@
 //"Phase 2: Implement tree serialization"
 // Phase 2: tree parsing logic added
 // Phase 2: deterministic ordering ensured
+// Phase 2: buffer safety fix
+
 
 #include "tree.h"
 #include "pes.h"
