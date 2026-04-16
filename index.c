@@ -1,6 +1,9 @@
 //Phase 3: Initialize index
 //Phase 3: Add load/save logic
-Phase 3: Implement index_add
+//Phase 3: Implement index_add
+//Phase 3: Add directory handling
+
+
 #include "index.h"
 #include "pes.h"
 #include <stdio.h>
