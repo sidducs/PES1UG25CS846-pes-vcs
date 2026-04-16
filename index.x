@@ -1,14 +1,12 @@
-//Phase 3: Initialize index
-//Phase 3: Add load/save logic
 #include "index.h"
 #include "pes.h"
+#include "object.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #define INDEX_FILE ".pes/index"
 
-// Load index from file (binary)
 int index_load(Index *idx) {
 
     idx->count = 0;
@@ -22,7 +20,6 @@ int index_load(Index *idx) {
     return 0;
 }
 
-// Save index to file (binary)
 int index_save(const Index *idx) {
 
     FILE *f = fopen(INDEX_FILE, "wb");
@@ -34,9 +31,9 @@ int index_save(const Index *idx) {
     return 0;
 }
 
-// Add file to index
 int index_add(Index *idx, const char *path) {
 
+    // read file content
     FILE *f = fopen(path, "rb");
     if (!f) return -1;
 
@@ -48,12 +45,13 @@ int index_add(Index *idx, const char *path) {
     fread(data, 1, size, f);
     fclose(f);
 
+    // store as blob
     ObjectID id;
     object_write(OBJ_BLOB, data, size, &id);
 
     free(data);
 
-    // update if exists
+    // check if exists
     for (int i = 0; i < idx->count; i++) {
         if (strcmp(idx->entries[i].path, path) == 0) {
             idx->entries[i].hash = id;
@@ -70,18 +68,3 @@ int index_add(Index *idx, const char *path) {
 
     return 0;
 }
-
-// REQUIRED by pes.c (fixes linker error)
-int index_status(const Index *idx) {
-
-    printf("Index contains %d entries:\n", idx->count);
-
-    for (int i = 0; i < idx->count; i++) {
-        printf("%o %s\n",
-               idx->entries[i].mode,
-               idx->entries[i].path);
-    }
-
-    return 0;
-}
-
