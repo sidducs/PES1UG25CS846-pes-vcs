@@ -1,3 +1,6 @@
+//"Phase 2: Implement tree serialization"
+// Phase 2: tree parsing logic added
+
 #include "tree.h"
 #include "pes.h"
 #include <stdio.h>
