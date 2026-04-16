@@ -1,5 +1,6 @@
 //Phase 4: Implement commit structure
 //Phase 4: Add tree integration
+//Phase 4: Add metadata and timestamp
 
 
 #include "commit.h"
