@@ -58,6 +58,9 @@ int object_exists(const ObjectID *id) {
 }
 
 // ─── TODO: Implement these// Phase 1 improvement: header construction logic
+// Phase 1 improvement: object_read parsing logic
+// Phase 1 improvement: integrity verification
+// Phase 1 improvement: final cleanup
 ──────────────────────────────────────────────────
 
 int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out) {
